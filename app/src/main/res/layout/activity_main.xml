@@ -1,0 +1,278 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="#F80"
+        android:orientation="vertical">
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/LinearLayout1.1"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="GEAR"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:textIsSelectable="false"
+                android:background="@color/material_blue_grey_800"/>
+
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_gear_up"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:background="#F80"
+                android:text="GEAR UP"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_gear_down"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:background="#F80"
+                android:text="GEAR DOWN"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/LinearLayout1.2"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="FLAPS"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:textIsSelectable="false"
+                android:background="@color/material_blue_grey_800"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_flap_0"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:background="#F80"
+                android:text="0%"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_flap_10"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:background="#F80"
+                android:text="10%"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_flap_20"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:background="#F80"
+                android:text="20%"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout1.3"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="AIR BRAKES"
+                android:textSize="18dp"
+                android:textColor="#ffffff"
+                android:textIsSelectable="false"
+                android:background="@color/material_blue_grey_800"/>
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/button_brake_on"
+
+                android:text="BRAKE ON"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/button_brake_off"
+
+                android:text="BRAKE OFF"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:id="@+id/textView1"
+            android:text="@string/thr"
+            android:textSize="35dp"
+            android:textColor="#ffffff"
+            android:textIsSelectable="false"
+            android:background="#ff89260b"/>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout2.1"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+
+            <LinearLayout
+                    android:id="@+id/LinearLayout2.1.1"
+                    android:layout_weight="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/color_degrade_1">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/textView2"
+                        android:gravity="center"
+                        android:text="90%"
+                        android:textSize="20dp"
+                        android:textColor="#ffffff"
+                        android:textIsSelectable="false"/>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/textView3"
+                        android:gravity="center"
+                        android:text="70%"
+                        android:textSize="20dp"
+                        android:textColor="#ffffff"
+                        android:textIsSelectable="false"/>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/textView4"
+                        android:gravity="center"
+                        android:text="50%"
+                        android:textSize="20dp"
+                        android:textColor="#ffffff"
+                        android:textIsSelectable="false"/>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/textView5"
+                        android:gravity="center"
+                        android:text="30%"
+                        android:textSize="20dp"
+                        android:textColor="#ffffff"
+                        android:textIsSelectable="false"/>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/textView6"
+                        android:gravity="center"
+                        android:text="10%"
+                        android:textSize="20dp"
+                        android:textColor="#ffffff"
+                        android:textIsSelectable="false"/>
+
+                </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:id="@+id/imageView1"
+                android:layout_gravity="center_horizontal" />
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:id="@+id/con_status"
+            android:text="DCS - A10C"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textIsSelectable="false"
+            android:background="#ff96996c"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+
+
+
+
