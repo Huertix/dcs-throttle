@@ -55,6 +55,8 @@ public class Main extends Activity implements OnTouchListener {
     private Canvas canvas;
     private Bitmap bitmap;
 
+    private int sleeptime = 1500;
+
     private float dw, dh;
     private float y;
 
@@ -63,8 +65,8 @@ public class Main extends Activity implements OnTouchListener {
     private String flapsNow;
     private String brakeOn = "0";
     private String brakeOff = "0";
-    private String userThrottle = "50";
-    private String messageReceived =" 50 ";
+    private String userThrottle = "10";
+    private String messageReceived ="10";
 
     private Thread receiverThread;
     private Thread senderThread;
@@ -283,10 +285,15 @@ public class Main extends Activity implements OnTouchListener {
                                     textView_conStatus.setText("CONNECTED");
                                     textView_conStatus.setTextColor(Color.GREEN);
                                     isConnected = true;
+                                    textView.setText(msgArray[1] + " %");
+                                    isFirstConnection = true;
+                                    sleeptime = 100;
+
                                 }
 
                                 textView.setText(msgArray[1] + " %");
                                 flapsNow = msgArray[3];
+
 
                                 if (isFirstConnection) {
 
@@ -322,6 +329,8 @@ public class Main extends Activity implements OnTouchListener {
                                 textView_conStatus.setText("DISCONNECTED");
                                 textView_conStatus.setTextColor(Color.RED);
                                 isConnected = false;
+                                sleeptime = 1500;
+
                             }
 
                             float aux = (float) Integer.parseInt(userThrottle);
@@ -515,7 +524,7 @@ public class Main extends Activity implements OnTouchListener {
                     socket.send(packet);
                     // Log.d("UDP", "Packet sent.");
 
-                    senderThread.sleep(100);
+                    senderThread.sleep(sleeptime);
 
                 }
                 socket.close();

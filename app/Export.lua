@@ -14,9 +14,15 @@ local speed =""
 local thr = 30;
 local engineNow = thr;
 
+local prevLuaExportStart = LuaExportStart
 
 
 function LuaExportStart()
+	
+	if prevLuaExportStart then
+        prevLuaExportStart()
+    end
+
 	log_file = io.open(lfs.writedir().."/Logs/Export.log", "w")
 	
 
@@ -168,7 +174,7 @@ function LuaExportStop()
    	log_file = nil
    end
 
-   c:close
+   --c:close
 end
 
 function LuaExportActivityNextEvent(t)
