@@ -1,6 +1,4 @@
 local log_file = nil
-local MainPanel = GetDevice(0)
-
 
 local HOST_PORT = 14801  -- Choose your desire port where DCS is running
 local ANDROID_PORT = 14800 -- Choose your desire port for android device
@@ -18,6 +16,7 @@ local prevLuaExportStart = LuaExportStart
 
 
 function LuaExportStart()
+
 	
 	if prevLuaExportStart then
         prevLuaExportStart()
@@ -88,33 +87,46 @@ end
 
 function LuaExportAfterNextFrame()
 
-	local engine_thr_left_now = MainPanel:get_argument_value(8) * 100
-	local engine_thr_right_now = MainPanel:get_argument_value(9) * 100
+	local acftName = "NONE"
+	local selfData = LoGetSelfData()
+	if selfData then
+		acftName = selfData["Name"]
+		--log_file:write("\n")
+		--log_file:write("AircrafName: ", acftName)
+		--log_file:write("\n")
+		
 
-	engineNow = math.floor((engine_thr_left_now + engine_thr_right_now) / 2)
-	--log_file:write("engines: ", engineNow)
-	--log_file:write("\n")
-
-	gearNow =  math.floor(MainPanel:get_argument_value(716))
-	--log_file:write("gearNow: ", gearNow)
-	--log_file:write("\n")
-
-	flapsNow =  math.floor(MainPanel:get_argument_value(653)*100)
-	--log_file:write("flapsNow: ", flapsNow)
-	--log_file:write("\n")
-
-	speed = math.floor(MainPanel:get_argument_value(48)*100) -- Currently not is use
-	--log_file:write("Speed: ", speed)
-	--log_file:write("\n")
+		local MainPanel = GetDevice(0)
+	
+		local engine_thr_left_now = MainPanel:get_argument_value(8) * 100 --F86(104), Mig15(205)
+		local engine_thr_right_now = MainPanel:get_argument_value(9) * 100
 
 
-	msgOut = HEAD_MSG..","..engineNow..","..gearNow..","..flapsNow.." \n"
-	c:sendto(msgOut, clientIP, ANDROID_PORT)
-	log_file:write("MSG: ", msgOut)
-    --log_file:write("\n")
+		engineNow = math.floor((engine_thr_left_now + engine_thr_right_now) / 2)
+		--log_file:write("engines: ", engineNow)
+		--log_file:write("\n")
 
-    --log_file:write("IP: ", clientIP..":",ANDROID_PORT)
-    --log_file:write("\n")
+		gearNow =  math.floor(MainPanel:get_argument_value(716)) --F86(180),
+		--log_file:write("gearNow: ", gearNow)
+		--log_file:write("\n")
+
+		flapsNow =  math.floor(MainPanel:get_argument_value(653)*100)
+		--log_file:write("flapsNow: ", flapsNow)
+		--log_file:write("\n")
+
+		speed = math.floor(MainPanel:get_argument_value(48)*100) -- Currently not is use
+		--log_file:write("Speed: ", speed)
+		--log_file:write("\n")
+
+
+		msgOut = HEAD_MSG..","..engineNow..","..gearNow..","..flapsNow.." \n"
+		c:sendto(msgOut, clientIP, ANDROID_PORT)
+		log_file:write("MSG: ", msgOut)
+	    --log_file:write("\n")
+
+	    --log_file:write("IP: ", clientIP..":",ANDROID_PORT)
+	    --log_file:write("\n")
+	end
 	
 end
 
